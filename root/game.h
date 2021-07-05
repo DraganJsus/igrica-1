@@ -7,11 +7,9 @@
 
 class game
 {
-
-	std::vector<snake> snake_;
-
-public:
-
+    public:
+        char teren[10][25];
+        //std::system( "cls" );
 	void draw();
 
 };
