@@ -139,7 +139,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="game.cpp" />
     <ClCompile Include="igrica.cpp" />
+    <ClCompile Include="obstacle.cpp" />
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="player.cpp" />
+    <ClCompile Include="snake.cpp" />
+    <ClCompile Include="terrain.cpp" />
+    <ClCompile Include="weapon.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="game.h" />
+    <ClInclude Include="obstacle.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="player.h" />
+    <ClInclude Include="snake.h" />
+    <ClInclude Include="terrain.h" />
+    <ClInclude Include="weapon.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
