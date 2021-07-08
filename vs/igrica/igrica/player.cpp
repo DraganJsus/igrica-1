@@ -54,7 +54,7 @@ void player::fire(player& player, weapon bullets[])
              }
              else
              {
-                 Beep(5000, 500);
+                 //Beep(5000, 500);
              }
         
 

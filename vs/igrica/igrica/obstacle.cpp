@@ -11,7 +11,7 @@ size_t obstacle::position_x(size_t terrain_size_x)
 
 		rnd_x = rand() % terrain_size_x;
 
-		if (rnd_x > 1 && rnd_x < terrain_size_x - 2) break;
+		if (rnd_x > 2 && rnd_x < terrain_size_x - 3) break;
 	}
 
 	return rnd_x;

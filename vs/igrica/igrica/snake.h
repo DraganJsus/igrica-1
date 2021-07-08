@@ -11,7 +11,8 @@ class snake
 	{
 		size_t body_x;
 		size_t body_y;
-		bool head;
+		size_t right_left_down;
+		size_t route_reminder;
 	};
 
 public:

@@ -1,7 +1,16 @@
 #pragma once
 #include "pch.h"
+#include"weapon.h"
+#include"player.h"
+#include"obstacle.h"
 class obstacle;
 
+
+struct obj
+{
+	size_t rand_x;
+	size_t rand_y;
+};
 class terrain
 {
 
@@ -9,10 +18,10 @@ public:
 
 	size_t size_x;
 	size_t size_y;
-	std::vector<obstacle*> obstacle_;
+	std::vector<obj> obstacle_;
 	
 	
-	void terrain::check(weapon &bullets[], player &player);
+	void check(weapon bullets[]);
 
 };
 

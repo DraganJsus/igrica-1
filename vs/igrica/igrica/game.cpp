@@ -1,5 +1,5 @@
 #include "game.h"
-
+#include "terrain.h"
 void game::set_grid(char screen[MAXN][MAXN], size_t size_x, size_t size_y)
 {
 	for (size_t i = 0; i < size_y; i++)
@@ -33,14 +33,16 @@ void game::input_values(size_t size_x, size_t size_y, size_t snake_size)
 	{
 		size_t cord_tail_x;
 		size_t cord_tail_y;
-		bool if_head;
+		size_t right_left_down;
+		size_t route_reminder;
 	};
 
 	game game;
 	obstacle obstacle;
 	player player;
 	snake snake;
-	
+	terrain terrain;
+		
 
 	game.screen;
 
@@ -48,6 +50,10 @@ void game::input_values(size_t size_x, size_t size_y, size_t snake_size)
 
 	size_t ob_y = obstacle.position_x(size_x);
 	size_t ob_x = obstacle.position_y(size_y);
+	obj novi;
+	novi.rand_x = ob_x;
+	novi.rand_y = ob_y;
+	terrain.obstacle_.push_back(novi);
 
 	screen[ob_x][ob_y] = '#';
 
@@ -89,7 +95,16 @@ void game::input_values(size_t size_x, size_t size_y, size_t snake_size)
 
 		// for player
 
+		if (!snake.tail.empty())
+		{
+			for (size_t i = 0; i < snake_size; i++)
+			{
+				screen[snake.tail[i].body_y][snake.tail[i].body_x] = ' ';
+			}
+		}
+
 		snake.move(snake_size);
+		snake.collide(ob_x, ob_y, size_x, size_y, snake_size);
 
 		for (size_t i = 0; i < snake_size; i++)
 		{
@@ -105,6 +120,7 @@ void game::input_values(size_t size_x, size_t size_y, size_t snake_size)
 			if (bullets[i].active == true && bullets[i].cord_y>1)
 			{
 				bullets[i].cord_y--;
+				terrain.check(bullets);
 			}
 			 if(bullets[i].cord_y==1)
          {
@@ -121,6 +137,7 @@ void game::input_values(size_t size_x, size_t size_y, size_t snake_size)
 
 		draw(screen, size_x, size_y, std::cout);
 
-		system("cls");
+		printf("\033[%d;%dH", 1, 1);
+		Sleep(40);
 	}
 }
