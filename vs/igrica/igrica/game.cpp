@@ -106,6 +106,10 @@ void game::input_values(size_t size_x, size_t size_y, size_t snake_size)
 			{
 				bullets[i].cord_y--;
 			}
+			 if(bullets[i]==1)
+         {
+            dissapear(bullets[i]);
+          }
 		}
 		
 

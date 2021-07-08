@@ -1,6 +1,9 @@
 #include "weapon.h"
 
-void dissapear(size_t terrain_cord_x, size_t terrain_cord_y)
-{
 
+void weapon::dissapear(weapon &bullet)
+{
+bullet.active=false;
+bullet.cord_x=NULL;
+bullet.cord_y=NULL;
 }
