@@ -12,7 +12,7 @@ public:
 	std::vector<obstacle*> obstacle_;
 	
 	
-	void check(weapon bullets[])
+	void terrain::check(weapon &bullets[], player &player);
 
 };
 
