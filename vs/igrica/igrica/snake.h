@@ -14,14 +14,12 @@ class snake
 		bool head;
 	};
 
-	//size_t length = 7;
+public:
 
 	std::vector <body_cords> tail;
 
-public:
-
-	void move(size_t right_left_down);
-	void collide(size_t obs_cord_x, size_t obs_cord_y, size_t terrain_length_x, size_t terrain_length_y);
+	body_cords move(size_t snake_length);
+	void collide(size_t obs_cord_x, size_t obs_cord_y, size_t terrain_length_x, size_t terrain_length_y, size_t snake_length);
 	void split(size_t bullet_cord_x, size_t bullet_cord_y);
 
 };

@@ -29,17 +29,90 @@ void game::draw(char screen[MAXN][MAXN], size_t size_x, size_t size_y, std::ostr
 
 void game::input_values(size_t size_x, size_t size_y, size_t snake_size)
 {
+	struct for_snake
+	{
+		size_t cord_tail_x;
+		size_t cord_tail_y;
+		bool if_head;
+	};
+
 	game game;
 	obstacle obstacle;
+	player player;
+	snake snake;
+	
 
 	game.screen;
 
 	set_grid(screen, size_x, size_y);
 
-	size_t ob_x = obstacle.position_x(size_x);
-	size_t ob_y = obstacle.position_y(size_y);
+	size_t ob_y = obstacle.position_x(size_x);
+	size_t ob_x = obstacle.position_y(size_y);
 
 	screen[ob_x][ob_y] = '#';
 
-	draw(screen, size_x, size_y, std::cout);
+	// for obstacle
+
+	player.cord_x = size_x / 2 + 1;
+	player.cord_y = size_y - 2;
+
+	// for player
+
+	size_t sn_x;
+	size_t sn_y;
+
+	// for snake
+
+	weapon bullets[3];
+    bullets[0].active = false;
+	bullets[1].active = false;
+	bullets[2].active = false;
+	bullets[0].cord_x = 100;
+	bullets[0].cord_y = 100;
+	bullets[1].cord_x = 100;
+	bullets[1].cord_y = 100;
+	bullets[2].cord_x = 100;
+	bullets[2].cord_y = 100;
+
+	while (1 > 0)
+	{
+
+		screen[player.cord_y][player.cord_x] = ' ';
+
+		player.movement(player, size_x,bullets);
+
+		screen[player.cord_y][player.cord_x] = 'W';
+
+		// for player
+
+		snake.move(snake_size);
+
+		for (size_t i = 0; i < snake_size; i++)
+		{
+			sn_x = snake.tail[i].body_x;
+			sn_y = snake.tail[i].body_y;
+
+			screen[sn_y][sn_x] = 'o';
+		}
+
+		// for snake
+		for (int i = 0; i < 3; i++)
+		{
+			if (bullets[i].active == true)
+			{
+				bullets[i].cord_y--;
+			}
+		}
+		
+
+		screen[bullets[0].cord_y][bullets[0].cord_x] = '*';
+		screen[bullets[1].cord_y][bullets[1].cord_x] = '*';
+		screen[bullets[2].cord_y][bullets[2].cord_x] = '*';
+
+		// for weapon
+
+		draw(screen, size_x, size_y, std::cout);
+
+		system("cls");
+	}
 }

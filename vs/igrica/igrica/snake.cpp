@@ -7,31 +7,48 @@ struct body_cords
 	bool head;
 };
 
-const size_t length = 7;
-
 size_t right_left_down = 1;
 
 std::vector <body_cords> tail;
 
-void snake::move(size_t right_left_down)
+snake::body_cords snake::move(size_t snake_length)
 {
 	if (tail.empty())
 	{
-		for (size_t i = 0; i < length - 1; i++)
+		for (size_t i = 0; i < snake_length - 1; i++)
 		{
 			tail.push_back({ i + 1, 1, false });
 		}
 
-		tail.push_back({ length, 1, true });
+		tail.push_back({ snake_length, 1, true });
 	}
+
+	// setting snakes first position
+
+	for (size_t i = 0; i < tail.size(); i++)
+	{
+		if (right_left_down == 1)
+		{
+
+		}
+	}
+
+	// moving snake cords
+
+	for (size_t i = 0; i < tail.size(); i++)
+	{
+		return tail[i];
+	}
+
+	// putting snake cords in screen
 }
 
-void snake::collide(size_t obs_cord_x, size_t obs_cord_y, size_t terrain_length_x, size_t terrain_length_y)
+void snake::collide(size_t obs_cord_x, size_t obs_cord_y, size_t terrain_length_x, size_t terrain_length_y, size_t snake_length)
 {
 	terrain te;
 	obstacle ob;
 
-	for (size_t i = 0; i < length; i++)
+	for (size_t i = 0; i < snake_length; i++)
 	{
 		if (tail[i].head)
 		{

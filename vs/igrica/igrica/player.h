@@ -5,14 +5,14 @@
 class player
 {
 
+public:
+
 	size_t cord_x;
 	size_t cord_y;
 
-public:
-
 	bool alive(size_t snake_position, size_t snake_length);
-	void movement();
-	void fire();
+	void movement(player &player, size_t size_x, weapon bullets[]);
+	void fire(player& player, weapon bullets[]);
 
 };
 
