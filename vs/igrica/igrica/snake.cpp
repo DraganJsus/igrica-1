@@ -29,7 +29,7 @@ snake::body_cords snake::move(size_t snake_length)
 	{
 		if (right_left_down == 1)
 		{
-
+			
 		}
 	}
 
