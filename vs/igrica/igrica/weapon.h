@@ -12,7 +12,7 @@ public:
 	size_t cord_y;
 	bool active;
 
-	void dissapear(weapon &bullet);
+	
 	
 };
 

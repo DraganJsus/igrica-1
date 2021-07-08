@@ -13,6 +13,6 @@ public:
 	bool alive(size_t snake_position, size_t snake_length);
 	void movement(player &player, size_t size_x, weapon bullets[]);
 	void fire(player& player, weapon bullets[]);
-
+        void dissapear(weapon &bullet);
 };
 

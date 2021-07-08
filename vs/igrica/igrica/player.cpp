@@ -5,6 +5,13 @@ bool alive(size_t snake_position, size_t snake_length)
 	return 0;
 }
 
+void player::dissapear(weapon &bullet)
+{
+bullet.active=false;
+bullet.cord_x=NULL;
+bullet.cord_y=NULL;
+}
+
 void player::movement(player &player, size_t size_x, weapon bullets[])
 {
     while (_kbhit())
