@@ -7,7 +7,7 @@ size_t obstacle::position_x(size_t terrain_size_x)
 	
 	srand(time(NULL));
 
-	rnd_x = rand() % 2 + terrain_size_x;
+	rnd_x = rand() % terrain_size_x;
 
 	return rnd_x;
 }
@@ -18,7 +18,7 @@ size_t obstacle::position_y(size_t terrain_size_y)
 
 	srand(time(NULL));
 
-	rnd_y = rand() % 2 + terrain_size_y;
+	rnd_y = rand() % terrain_size_y;
 
 	return rnd_y;
 }
