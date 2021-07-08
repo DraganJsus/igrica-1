@@ -1,11 +1,20 @@
 #include "weapon.h"
 
-void dissapear(size_t terrain_cord_x, size_t terrain_cord_y)
+void dissapear(weapon &bullet)
 {
-
+bullet.active=false;
+bullet.cord_x=NULL;
+bullet.cord_y=NULL;
 }
 
-bool allow_to_shot(size_t b_counter)
-{
-	return 0;
-}
+ /*  for(int i=0;i<3;i++)
+    {
+        if(bullets[i].active==true)
+        {
+            bullets[i].cord_y++;
+        }
+        if(bullets[i]==1)
+        {
+            dissapear(bullets[i]);
+        }
+    } */
