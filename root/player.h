@@ -11,7 +11,7 @@ public:
 
 
 	bool alive(size_t snake_position, size_t snake_length);
-	void movement();
+	void movement(player &player);
 	void fire();
 
 };
