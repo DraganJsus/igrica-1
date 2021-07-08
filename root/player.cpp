@@ -25,25 +25,38 @@ void player::movement(player &player,size_t size_x)
     }
 }
 
-void player::fire(player player,weapon bullet,char &screen[][])
+void player::fire(player &player,weapon &bullets[])
 {
-    if(getch()==107)
+    for(int i=0;i<3;i++)
     {
-        while(1)
+        if(bullets[i].active==true)
         {
-            draw();
-            if(teren[i][j]=='.')
-            {
-                teren[i][j]=NULL;
-            }
-            if(j>=visina)
-            {
-                break;
-                //dissapear();
-            }
-            j++;
-            teren[i][j]='.';
-            std::system( "cls" );
+            bullets[i].cord_y++;
         }
+    }
+    if(getch()=='k')
+    {
+     if(bullets[0].active==false)
+     {
+        bullets[0].cord_x=player.cord_x;
+        bullets[0].cord_y=player.cord_y;
+        bullets[0].active=true;
+     }
+     else if(bullets[1].active==false)
+     {
+        bullets[1].cord_x=player.cord_x;
+        bullets[1].cord_y=player.cord_y;
+        bullets[1].active=true;
+     }
+     else if(bullets[2].active==false)
+     {
+        bullets[2].cord_x=player.cord_x;
+        bullets[2].cord_y=player.cord_y;
+        bullets[2].active=true;
+     }
+     else
+     {
+         Beep(5000,50000);
+     }
     }
 }
