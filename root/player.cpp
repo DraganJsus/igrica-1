@@ -1,23 +1,23 @@
 #include "player.h"
 
 const size_t visina =25;
-/*
+
 bool alive(size_t snake_position, size_t snake_length)
 {
 	return 0;
 }
 
-void movement(char &teren[i][j])
+void movement(player player)
 {
     while(kbhit())
     switch(getch())
 	{
-        case 97:teren[i-1][j]='w';teren[i][j]=NULL;break;
-        case 100:teren[i+1][j]='w';teren[i][j]=NULL;break;
+        case 97:player.cord_x--;break;
+        case 100:player.cord_x++;;break;
     }
 }
 
-void fire(char &teren[i][j])
+void fire(player player,weapon bullet,char &screen[][])
 {
     if(getch()==107)
     {

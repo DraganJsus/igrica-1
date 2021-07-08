@@ -5,7 +5,7 @@ const size_t width;
 
 void draw()
 {
-   // char ekran[width][height];
+  /* // char ekran[width][height];
 
     for(size_t i=0;i<height;i++)
     {
@@ -13,5 +13,5 @@ void draw()
         {
 
         }
-    }
+    } */
 }
